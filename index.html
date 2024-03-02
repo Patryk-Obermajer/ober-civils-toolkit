@@ -1,0 +1,438 @@
+<!-- here's our lovely help file. Enjoy reading through the fine code -->
+<!-- Pat's toolkit -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ober Civils Toolkit User Manual</title>
+<link rel="icon" type="image/x-icon" href="OB-Logo-vector.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/pat.css">
+<link rel="stylesheet" href="css/pat-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+ul li { margin-bottom: 15px; }
+p {
+  font-size: 16px;
+  line-height:200%;
+}
+.pat-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 2px;
+  bottom: 0;
+  height: inherit;
+}
+/* Fixed sidenav, full height */
+.pat-sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.pat-sidebar a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.pat-sidebar a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+.normaltext{
+  font-size: 16px;
+  line-height:200%;
+}
+/* Main content */
+.main {
+  font-family: "Roboto";
+  margin-left: 0px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 0px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  /* background-color: #111; */
+  /* color: white; */
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  /* background-color: #2626267e; */
+  padding-left: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+</style>
+<script src="js/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="pat-top">
+
+</div>
+
+<!-- Sidebar -->
+<nav class="pat-sidebar pat-bar-block pat-collapse pat-large pat-theme-l5 pat-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="pat-right pat-xlarge pat-padding-large pat-hover-black pat-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+
+
+  <!-- <img src="/ober-civils-toolkit-black.svg"  width="10" class="pat-bar-item nav"><img> -->
+
+  
+  <h4 class="pat-bar-item nav"><b>Contents</b></h4>
+  <a class="pat-bar-item pat-button pat-hover-black nav" onclick = "ober_show('#Ober_Civils_Toolkit_Help_content')" href="#Ober_Civils_Toolkit_Help">Getting Started</a>
+  
+  <button class="dropdown-btn pat-bar-item pat-button pat-hover-black nav" onclick = "ober_show('#Levels_content')" href="#Levels">Levels
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#GradientFallsCalc">Gradient/Fall Calculator</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Spot Level Calculator">Spot Level Calculator</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Spot Level/FFL Creator">Spot Level/FFL Creator</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Spot Levels Around FFL">Spot Levels Around FFL</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Raise/Lower Levels">Raise/Lower Levels</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Move Block To Elevation">Move Block To Elevation</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Text To Block">Text To Block</a>
+  </div>
+  <a class="pat-bar-item pat-button pat-hover-black nav" href="#Lateral Drains">Lateral Drains</a>
+  <a class="pat-bar-item pat-button pat-hover-black nav" href="#Layer Operators">Layer Operators</a>
+  <button class="dropdown-btn pat-bar-item pat-button pat-hover-black nav" onclick = "ober_show('#Miscellaneous_content')" href="#Miscellaneous">Miscellaneous
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Setting out">Setting out</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Circles to Blocks">Circles to Blocks</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#2D-Distance">2D-Distance</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Select Previous">Select Previous</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#Title Block Attribute Transfer">Title Block Attribute Transfer</a>
+    <a class="pat-bar-item pat-button pat-hover-black nav" href="#OS Grid Reference Finder">OS Grid Reference Finder</a>
+  </div>
+ 
+  <a class="pat-bar-item pat-button pat-hover-black nav" href="#Contact">Contact</a>
+  <!-- <a class="pat-bar-item pat-button pat-hover-black nav" href="#kupa">Link</a> -->
+  <!-- <img src="obermajer-logo.svg" style="width: 120px; height: auto; display: block; margin: 0 auto;"  class="pat-bar-item nav"></img> -->
+  <div style="position: fixed; bottom: 12px; left: 12px; width: 100%;">
+    <img src="obermajer-logo.svg" style="width: 90px; height: auto; display: block; margin-left: 0; margin-right: auto;transition: opacity 0.5s;" onmouseover="this.style.opacity=0.5" onmouseout="this.style.opacity=1"></img>
+  </div>
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="pat-overlay pat-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="pat-main" style="margin-left:250px">
+  <div class="pat-row pat-padding-64">
+    <div class="pat-twothird pat-container">
+      
+      <h1 id="Ober_Civils_Toolkit_Help" class="pat-text-teal" onclick = "ober_toggle('#Ober_Civils_Toolkit_Help_content')" >Ober Civils Toolkit User Manual</h1>
+      <!-- <iframe allow="autoplay" src="https://drive.google.com/file/d/1q60bZOpLZIdY_R21d4isNAlPzsgNGDL_/preview?start=1&autoplay=1&mute=1" width="640" height="480" ></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/7MHPrdAbse0?autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+      <div id="Ober_Civils_Toolkit_Help_content">
+        <p class="normaltext">
+          Welcome to the manual for Ober Civils Toolkit, a cutting-edge 2D ground modeling, drainage design, and CAD automation pack, fully integrated into AutoCAD.<br/>
+          Ober Civils Toolkit is the product of engineers' desire for an improved method of creating, reviewing, and updating their design information. It is engineered specifically for an intuitive and rapid workflow, making it ideal for scenarios with tight deadlines.
+        </p>
+        <br>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Introduction Video">
+          <source src="Resources/Introvid.m4v"> 
+        </video>
+        <br>
+        <h2 class="pat-text-teal" >
+          Key features
+        </h2>
+        <ul class="normaltext">
+          <li>Ober Civils Toolkit is a comprehensive 2D ground modeling package. It offers a wide range of tools that facilitate seamless work with engineering levels. This includes, but is not limited to, reviewing and calculating distance, level difference, and gradient; rapidly creating new level information based on either level difference or gradient; intuitively generating spot levels around proposed plots; and batch raising or lowering spot levels. Moreover, it simplifies and automates the creation of lateral drains in 2D.</li>
+          <li>The Toolkit's speed and reliability are largely due to its 2D base. This setup ensures that computing power isn't wasted on the recalculation and re-triangulation of 3D information. However, the Toolkit does provide the option to convert the generated 2D levels into 3D, which can then be exported and processed in any other software package.</li>
+          <li>Ober Civils Toolkit includes many features designed to simplify and automate common, often repetitive tasks. Examples include setting out, working with output drawings from PDS, managing layers, and more.</li>
+        </ul>  
+        <h2 class="pat-text-teal" >
+          Configuration
+        </h2>
+        <p>The Toolkit is composed of two primary components: the Ribbon user interface (Ober Civils Toolkit.cuix) and the back-end program (Ober Civils Toolkit.fas):</p>
+          <ul class="normaltext">
+           <li>To load the Ribbon TAB onto your AutoCAD, type `CUILOAD` into the command bar. Navigate to the `\Ober Civils Toolkit` folder and select `LOAD Ober Civils Toolkit.cuix`. This step is required only once, after which the ribbon tab will automatically open every time AutoCAD launches.</li>
+           <li>To load the FAS executable file, type `APPLOAD` into the command bar. Navigate to the `\Ober Civils Toolkit` folder and load `Ober Civils Toolkit.fas`. Then, while still in the Load/Unload application window, navigate to `CONTENTS` within the Startup Suite tab (located in the bottom right corner), and add `Ober Civils Toolkit.fas`. This ensures the Toolkit loads every time AutoCAD is opened.</li>
+          </ul>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Installation Video">
+          <source src="Resources/OCT-Installation.mp4"> 
+        </video>
+        <p><br>NOTE: Civils Toolkit is not supported by AutoCAD LT </p>
+          <!-- <div class="pat-third pat-container">
+            <p class="pat-border pat-padding-large pat-padding-32 pat-center">AD</p>
+            <p class="pat-border pat-padding-large pat-padding-64 pat-center">AD</p>
+          </div> -->
+        </div>
+    </div>
+  </div>
+
+  <div class="pat-row">
+    <div class="pat-twothird pat-container">
+      <h1 id="Levels" class="pat-text-teal" onclick = "ober_toggle('#Levels_content')">Levels</h1>
+      <div id="Levels_content">
+        <img src="Resources/imges/Levels.png"  width="350" class="pat-bar-item nav"></img>
+        <h2 class="pat-text-teal" id="GradientFallsCalc">
+          Gradient/Fall Calculator
+        </h2 > 
+        <p>
+          This tool measures the distance between two points and prompts the user for either a fall or a gradient. It then calculates the gradient and fall between the two points.
+        </p>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Gradient/Fall Calculator Video">
+          <source src="Resources/Levels/GradientFallCalculator.mp4"> 
+        </video>
+        <h2 class="pat-text-teal" id="Spot Level Calculator">
+          Spot Level Calculator
+        </h2> 
+        <p>
+          The Spot Level Calculator measures the distance between two spot level blocks, then calculates the level difference and gradient between these points. Optionally, it can also add a gradient/arrow label in-between.
+        </p>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Spot Level Calculator Video">
+          <source src="Resources/Levels/SpotLevelCalc.mp4"> 
+        </video>
+        <h2 class="pat-text-teal" id="Spot Level/FFL Creator">
+          Spot Level/FFL Creator
+        </h2>
+        <p>
+           With this tool, the user selects the base Spot Level or FFL block, then the program prompts for a new block location, level difference, or gradient. It subsequently creates a new spot level/FFL block in the selected location.
+        </p> 
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Spot Level Creator Video">
+          <source src="Resources/Levels/SpotLevelCreator.mp4"> 
+        </video>
+        <h2 class="pat-text-teal" id="Spot Levels Around FFL">
+          Spot Levels Around FFL
+        </h2>
+        <p>
+This feature generates Spot Levels around the FFL. By default, spot levels around FFL are 150 mm below the FFL unless the Underbuild option has been selected, in which case the spot level is reduced by 150 mm + Underbuild Height (for example, if UB height = 300 mm, the new spot level is reduced by 450 mm).
+        </p>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Spot Levels Around FFL Video">
+          <source src="Resources/Levels/SpotLevelsAroundFFL.mp4"> 
+        </video>
+        <h2 class="pat-text-teal" id="Raise/Lower Levels">
+          Raise/Lower Levels
+        </h2> 
+          <p>
+             This tool adjusts both FFL and Spot Levels by an entered value. It also allows batch adjusting levels of a number of blocks (both FFL and spot levels at the same time). This tool can be used to adjust the decimal places of multiple blocks at once.
+          </p>
+          <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Raise Lower Levels Video">
+            <source src="Resources/Levels/RaiseLowerLevels-01.mp4"> 
+          </video>
+        <h2 class="pat-text-teal" id="Move Block To Elevation">
+          Move Block To Elevation
+        </h2> 
+          <p>
+            This feature converts 2D spot levels to 3D by moving the blocks to an elevation based on the block attribute value. The 3D information can then be easily processed further by PDS or C3D, utilised for surface creation, etc. 
+          </p>
+          <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Move Blocks To Elevation Video">
+            <source src="Resources/Levels/MoveBlockToElevation.mp4"> 
+          </video>
+        <h2 class="pat-text-teal" id="Text To Block">
+          Text To Block
+        </h2> 
+          <p>
+            This tool allows for the insertion of blocks at the insertion points of Text entities.  
+          </p>
+          <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+            <source src="Resources/Levels/TextToBlocks.mp4"> 
+          </video>
+          <p>
+           NOTE: Only works with “Text” and not “MTEXT”. “MTEXT” can be exploded in order to convert to “TEXT”
+          </p>
+      </div>
+    </div>
+    <div class="pat-third pat-container">
+      <!-- <p class="pat-border pat-padding-large pat-padding-32 pat-center">AD</p>
+      <p class="pat-border pat-padding-large pat-padding-64 pat-center">AD</p> -->
+    </div>
+  </div>
+
+  <div class="pat-row pat-padding-64">
+    <div class="pat-twothird pat-container">
+      <h1 id="Lateral Drains" class="pat-text-teal" onclick = "ober_toggle('#Lateral_Drains_content')">Lateral Drains</h1>
+      <div id="Lateral_Drains_content">
+        <img src="Resources/imges/Laterals.png"  width="175" class="pat-bar-item nav"><img>
+        <ul class="normaltext">
+          <li>
+            SW PIPE DIA and FW PIPE DIA  – Sets pipe diameter of Lateral pipe
+          </li>
+          
+          <li>
+            
+            The 'SW LATERALS' and 'FW LATERALS' tools prompt for the upstream chamber Invert Level label (only "TEXT" entities are accepted), followed by the centres of the upstream and downstream chambers, and finally the downstream Invert Level Label. 
+          </li>
+        </ul>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+          <source src="Resources/Laterals/Laterals.mp4"> 
+        </video>
+      </div>
+    </div>
+    <div class="pat-third pat-container">
+      <!-- <p class="pat-border pat-padding-large pat-padding-32 pat-center">AD</p>
+      <p class="pat-border pat-padding-large pat-padding-64 pat-center">AD</p> -->
+    </div>
+  </div>
+  <div class="pat-row pat-padding-64">
+    <div class="pat-twothird pat-container">
+      <h1 id="Layer Operators" class="pat-text-teal" onclick = "ober_toggle('#Layer_Operators_content')">Layer Operators</h1>
+      <img src="Resources/imges/LayerOperators.png"  width="275" class="pat-bar-item nav"><img>
+      <div id="Layer_Operators_content">
+
+   
+      <ul class="normaltext">
+        <li>
+          Set Up PDS – Sets PDS Layers within the Drawing to correct colours and converts “CLAY” material text to “uPVC”
+
+          
+        </li>
+        
+        <li>
+          Set Up Engineering – Batch changes colours within Xrefs (only works when xref naming convention is followed: x-layout, x-survey, etc.)
+          
+       
+        </li>
+      </ul>
+      <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+        <source src="Resources/Misc/Set-up-PDS.mp4"> 
+      </video>
+    </div>
+    </div>
+    <div class="pat-third pat-container">
+      <!-- <p class="pat-border pat-padding-large pat-padding-32 pat-center">AD</p>
+      <p class="pat-border pat-padding-large pat-padding-64 pat-center">AD</p> -->
+    </div>
+  </div>
+  <div class="pat-row pat-padding-64">
+    <div class="pat-twothird pat-container" >
+      <h1 id="Miscellaneous" class="pat-text-teal" onclick = "ober_toggle('#Miscellaneous_content')">Miscellaneous</h1>
+      <div id="Miscellaneous_content">
+        <img src="Resources/imges/Misc.png"  width="400" class="pat-bar-item nav"><img>
+        <h2 class="pat-text-teal" id="Setting out">
+          Setting out
+        </h2 >
+       <p>
+
+        Sets outs coordinates of each vertex of selected polylines and lines. Sets out either as MLeaders or Blocks (prompts user to select the setting out block – see Blocks.dwg). Block Setting Out option works only with blocks, which have only one attribute.
+      </p>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+          <source src="Resources/Misc/Setting-Out.mp4"> 
+        </video>
+        <p>3D Setting out:</p>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+          <source src="Resources/Misc/3d-Setting-Out.mp4"> 
+        </video>
+        <h2 class="pat-text-teal" id="Circles to Blocks">
+          Circles to Blocks
+        </h2>
+        <p>
+          Prompts user to select the base block and then circles. Inserts blocks in the centre points of the selected blocks. Works only with non-dynamic blocks (the ones with no attributes).
+          
+        </p>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+          <source src="Resources/Misc/CirclesToBlocks.mp4"> 
+        </video>
+        <h2 class="pat-text-teal" id="2D-Distance">
+          
+          2D-Distance
+        </h2>
+        
+        <p>
+        Lets measure 2D distance even when Snap is On and objects are on different elevations.
+      </p>
+        <h2 class="pat-text-teal" id="Select Previous">
+          
+          Select Previous
+        </h2>
+        <p>
+        Selects previously used objects.
+      </p>
+      </h2>
+      <h2 class="pat-text-teal" id="Title Block Attribute Transfer">
+        
+        Title Block Attribute Transfer
+      </h2>
+      <p>
+      Enables attribute transfer across attributed blocks. Especially useful when applied to Title Blocks of different Sheet Sizes (say A1 to A2 etc.)
+    </p>
+    <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+      <source src="Resources/Misc/TitleBlockAttributeTransfer.mp4"> 
+    </video>
+      <h2 class="pat-text-teal" id="OS Grid Reference Finder">
+        
+        OS Grid Reference Finder
+      </h2>
+      <p>
+      Prompts for a point. Grid Reference Finder website pops-up
+    </p>
+    <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="Text to Blocks Video">
+      <source src="Resources/Misc/OS-Pat.mp4"> 
+    </video>
+    </div>
+    </div>
+    <div class="pat-third pat-container">
+      <!-- <p class="pat-border pat-padding-large pat-padding-32 pat-center">AD</p>
+      <p class="pat-border pat-padding-large pat-padding-64 pat-center">AD</p> -->
+    </div>
+  </div>
+  <div class="pat-row pat-padding-64">
+    <div class="pat-twothird pat-container">
+      <h1 id="Contact" class="pat-text-teal">Contact</h1>
+ <p>Feel free to contact Mr Pat</p>
+    </div>
+    <div class="pat-third pat-container">
+      <!-- <p class="pat-border pat-padding-large pat-padding-32 pat-center">AD</p>
+      <p class="pat-border pat-padding-large pat-padding-64 pat-center">AD</p> -->
+    </div>
+  </div>
+
+  <!-- Pagination -->
+
+
+  <footer id="myFooter">
+    <div class="pat-container pat-theme-l2 pat-padding-32" style="position: relative;">
+      <h2>Ober Civils Toolkit</h2>
+      <h5>Developed by Pat Obermajer</h5> 
+    </div>
+  </footer>
+  
+<!-- END MAIN -->
+</div>
+
+
+</body>
+<script src="js/script.js">
+
+</script>
+</html>

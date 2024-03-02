@@ -1,0 +1,379 @@
+<!-- https://w3schools.com/w3css/tryit.asp?filename=tryw3css_templates_webpage&stacked=h -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ober Civils Toolkit User Manual</title>
+<link rel="icon" type="image/x-icon" href="faviconOB.svg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
+
+ul li { margin-bottom: 15px; }
+p {
+  font-size: 16px;
+  line-height:200%;
+}
+.w3-sidebar {
+  z-index: 3;
+  width: 250px;
+  top: 2px;
+  bottom: 0;
+  height: inherit;
+}
+/* Fixed sidenav, full height */
+.w3-sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.w3-sidebar a, .dropdown-btn {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+/* On mouse-over */
+.w3-sidebar a:hover, .dropdown-btn:hover {
+  color: #f1f1f1;
+}
+
+.normaltext{
+  font-size: 16px;
+  line-height:200%;
+}
+/* Main content */
+.main {
+  font-family: "arial";
+  margin-left: 0px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 0px;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+  /* background-color: #111; */
+  /* color: white; */
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+  display: none;
+  /* background-color: #2626267e; */
+  padding-left: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+</style>
+<script src="js/jquery-1.11.0.min.js"></script>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+
+</div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item nav"><b>Contents</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black nav" onclick = "ober_show('#Ober_Civils_Toolkit_Help_content')" href="#Ober_Civils_Toolkit_Help">Getting Started</a>
+  
+  <button class="dropdown-btn w3-bar-item w3-button w3-hover-black nav" onclick = "ober_show('#Levels_content')" href="#Levels">Levels
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#GradientFallsCalc">Gradient/Fall Calculator</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Spot Level Calculator">Spot Level Calculator</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Spot Level/FFL Creator">Spot Level/FFL Creator</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Spot Levels Around FFL">Spot Levels Around FFL</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Raise/Lower Levels">Raise/Lower Levels</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Move Block To Elevation">Move Block To Elevation</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Text To Block">Text To Block</a>
+  </div>
+  <a class="w3-bar-item w3-button w3-hover-black nav" href="#Lateral Drains">Lateral Drains</a>
+  <a class="w3-bar-item w3-button w3-hover-black nav" href="#Layer Operators">Layer Operators</a>
+  <button class="dropdown-btn w3-bar-item w3-button w3-hover-black nav" onclick = "ober_show('#Miscellaneous_content')" href="#Miscellaneous">Miscellaneous
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Setting out">Setting out</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Circles to Blocks">Circles to Blocks</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#2D-Distance">2D-Distance</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Select Previous">Select Previous</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#Title Block Attribute Transfer">Title Block Attribute Transfer</a>
+    <a class="w3-bar-item w3-button w3-hover-black nav" href="#OS Grid Reference Finder">OS Grid Reference Finder</a>
+  </div>
+ 
+  <a class="w3-bar-item w3-button w3-hover-black nav" href="#Contact">Contact</a>
+  <!-- <a class="w3-bar-item w3-button w3-hover-black nav" href="#kupa">Link</a> -->
+</nav>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
+<div class="w3-main" style="margin-left:250px">
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      
+      <h1 id="Ober_Civils_Toolkit_Help" class="w3-text-teal" onclick = "ober_toggle('#Ober_Civils_Toolkit_Help_content')" >Ober Civils Toolkit User Manual</h1>
+      <!-- <iframe allow="autoplay" src="https://drive.google.com/file/d/1q60bZOpLZIdY_R21d4isNAlPzsgNGDL_/preview?start=1&autoplay=1&mute=1" width="640" height="480" ></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/7MHPrdAbse0?autoplay=1&mute=1&loop=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+      <div id="Ober_Civils_Toolkit_Help_content">
+        <p class="normaltext">
+          Welcome to the manual for Ober Civils Toolkit, the cutting edge 2D ground modeling and drainage design pack.<br/>
+          Ober Civils Toolkit is the result of engineers wanting a better way to create, review and update their design information. Designed by engineers specifically for the most intuitive and fastest possible worflow when working with tight deadlines.
+        </p>
+        <br>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="My test image">
+          <source src="Resources/IntroVid.mp4"> 
+        </video>
+        <br>
+        <h2 class="w3-text-teal" >
+          Key features
+        </h2>
+        <ul class="normaltext">
+          <li >Ober Civils Toolkit is a 2D ground modelling package, offering a broad range of tools enabling seamless work with engineering levels including, but not limited to, reviewing and calculating distance, level difference and gradient, quickly creating new level information based on either level difference or gradient, intutively generating spot levels around the proposed plots, and batch raising or lowering of spot levels. Similarly, it enables simplified creation of lateral drains in 2D.</li>
+          <li>It offers speed and reliability largely thanks to being 2D based. Computing power is not being wasted on recalculating and re-triangulating of the 3D information. The toolkit enables us, however, to covert the generated 2D levels to 3D to be then exported and processed.</li>
+          <li>It contains many features, which help simplify and automate common oftentimes repetitative tasks, e.g. setting out, working with output drawings from PDS, managing layers, and many others.</li>
+        </ul>  
+        <h2 class="w3-text-teal" >
+          Configuration
+        </h2>
+        <p>Toolkit comprises two componentst: Ribbon user interface (Ober Civils Toolkit.cuix) and back-end program (Ober Civils Toolkit.fas):</p>
+        <ul class="normaltext">
+         <li>To load the Ribbon TAB onto your AutoCAD, type CUILOAD into the command bar. Go to the \Ober Civils Toolkit folder and LOAD Ober Civils Toolkit.cuix. This has to be performed only once and the ribbon tab will open every time AutoCAD launches.</li>
+         <li>To load the FAS executable file, type APPLOAD. Go to the \Ober Civils Toolkit folder and load Ober Civils Toolkit.fas. Then, still in Load/Unload application window, navigate to CONTENTS within Startup Suite tab (bottom right corner) and add Ober Civils Toolkit.fas to ensure the Toolkit loads every time AutoCAD is opened.</li>
+        </ul>
+        <video autoplay="True" muted="True" loop="True" width="500" class="center" alt="My test image">
+          <source src="Resources/OCT-Installation.mp4"> 
+        </video>
+        <p><br>NOTE: Toolkit only works with full version of AutoCAD</p>
+          <!-- <div class="w3-third w3-container">
+            <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+            <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p>
+          </div> -->
+        </div>
+    </div>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-twothird w3-container">
+      <h1 id="Levels" class="w3-text-teal" onclick = "ober_toggle('#Levels_content')">Levels</h1>
+      <div id="Levels_content">
+        <h2 class="w3-text-teal" id="GradientFallsCalc">
+          Gradient/Fall Calculator
+        </h2 > 
+        <p>
+          Measures distance between two points. Prompts user for either fall or gradient.  Calculates gradient and fall between the two points.
+        </p>
+        <h2 class="w3-text-teal" id="Spot Level Calculator">
+          Spot Level Calculator
+        </h2> 
+        <p>
+          Measures distance between two spot level blocks. Calculates the level difference and gradient between the points. Optionally adds a label in-between.
+        </p>
+        <h2 class="w3-text-teal" id="Spot Level/FFL Creator">
+          Spot Level/FFL Creator
+        </h2>
+        <p>
+          User selects the base Spot Level or FFL block. Prompts for new block location, level difference or gradient. Creates a new spot level/FFL block in the selected location.
+        </p> 
+        <h2 class="w3-text-teal" id="Spot Levels Around FFL">
+          Spot Levels Around FFL
+        </h2>
+        <p>
+          Generates Spot Levels around FFL. By default spot levels around FFL are 150 mm below the FFL unless Underbuild option has been selected, in which case the spot level is reduced by 150 mm + Underbuild Height (example: UB height = 300 mm. New spot level at reduced level by 450 mm).
+        </p> 
+        <h2 class="w3-text-teal" id="Raise/Lower Levels">
+          Raise/Lower Levels
+        </h2> 
+          <p>
+            Adjusts both FFL and Spot Levels by entered value. Enables also to batch adjust levels  of a number of blocks.
+          </p>
+        <h2 class="w3-text-teal" id="Move Block To Elevation">
+          Move Block To Elevation
+        </h2> 
+          <p>
+            Converts 2D spot levels to 3D: by moving the blocks to elevation based on block attribute value.
+          </p>
+        <h2 class="w3-text-teal" id="Text To Block">
+          Text To Block
+        </h2> 
+          <p>
+            Inserts blocks based on Text Value. Only works with “Text” and not “MTEXT”. “MTEXT” can be exploded in order to convert to “TEXT”
+          </p>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+    </div>
+  </div>
+
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 id="Lateral Drains" class="w3-text-teal" onclick = "ober_toggle('#Lateral_Drains_content')">Lateral Drains</h1>
+      <div id="Lateral_Drains_content">
+        
+        <ul class="normaltext">
+          <li>
+            SW PIPE DIA and FW PIPE DIA  – Sets pipe diameter of Lateral pipe
+          </li>
+          
+          <li>
+            
+            SW LATERALS and FW LATERALS – Prompts for upstream chamber Invert Level label (only “TEXT” entities), then centre of upstream and downstream chambers and downstream Invert Level Label.
+          </li>
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <div class="w3-third w3-container">
+      <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+    </div>
+  </div>
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 id="Layer Operators" class="w3-text-teal" onclick = "ober_toggle('#Layer_Operators_content')">Layer Operators</h1>
+      <div id="Layer_Operators_content">
+
+   
+      <ul class="normaltext">
+        <li>
+          Set Up PDS – Sets PDS Layers within the Drawing to correct colours and converts “CLAY” material text to “uPVC”
+
+          
+        </li>
+        
+        <li>
+          Set Up Engineering – Batch changes colours within Xrefs (only works when xref naming convention is followed: x-layout, x-survey, etc.)
+          
+          SW LATERALS and FW LATERALS – Prompts for upstream chamber Invert Level label (only “TEXT” entities), then centre of upstream and downstream chambers and downstream Invert Level Label.
+        </li>
+      </ul>
+    </div>
+    </div>
+    <div class="w3-third w3-container">
+      <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+    </div>
+  </div>
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container" >
+      <h1 id="Miscellaneous" class="w3-text-teal" onclick = "ober_toggle('#Miscellaneous_content')">Miscellaneous</h1>
+      <div id="Miscellaneous_content">
+
+        <h2 class="w3-text-teal" id="Setting out">
+          Setting out
+        </h2 >
+        Sets outs coordinates of each vertex of selected polylines and lines. Sets out either as Mleaders or Blocks (prompts user to select the setting out block – see Blocks.dwg). Block Setting Out option works only with blocks, which have only one attribute.
+        <h2 class="w3-text-teal" id="Circles to Blocks">
+          Circles to Blocks
+        </h2>
+        
+        Prompts user to select the base block and then circles. Inserts blocks in the centre points of the selected blocks. Works only with non-dynamic blocks (which have no attributes).
+        <h2 class="w3-text-teal" id="2D-Distance">
+          
+          2D-Distance
+        </h2>
+        
+        Lets measure 2D distance even when Snap is On and objects are on different elevations.
+        <h2 class="w3-text-teal" id="Select Previous">
+          
+          Select Previous
+        </h2>
+        
+        Selects previously selected objects.
+      </h2>
+      <h2 class="w3-text-teal" id="Title Block Attribute Transfer">
+        
+        Title Block Attribute Transfer
+      </h2>
+      
+      Enables attribute transfer across attributed blocks. Especially useful when applied to Title Blocks of different Sheet Sizes (say A1 to A2 etc.)
+      <h2 class="w3-text-teal" id="OS Grid Reference Finder">
+        
+        OS Grid Reference Finder
+      </h2>
+      
+      Prompts for a point. Grid Reference Finder website pops-up
+      
+    </div>
+    </div>
+    <div class="w3-third w3-container">
+      <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+    </div>
+  </div>
+  <div class="w3-row w3-padding-64">
+    <div class="w3-twothird w3-container">
+      <h1 id="Lateral Drains" class="w3-text-teal">Contact</h1>
+ <p>Feel free to contact Mr Pat</p>
+    </div>
+    <div class="w3-third w3-container">
+      <!-- <p class="w3-border w3-padding-large w3-padding-32 w3-center">AD</p>
+      <p class="w3-border w3-padding-large w3-padding-64 w3-center">AD</p> -->
+    </div>
+  </div>
+
+  <!-- Pagination -->
+
+
+  <footer id="myFooter">
+    <div class="w3-container w3-theme-l2 w3-padding-32">
+      <h2>Ober Civils Toolkit</h4>
+      <h5>Developed by Pat Obermajer</h4>
+    </div>
+
+    <!-- <div class="w3-container w3-theme-l1">
+      <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </div> -->
+  </footer>
+
+<!-- END MAIN -->
+</div>
+
+
+</body>
+<script src="js/script.js">
+
+</script>
+</html>
