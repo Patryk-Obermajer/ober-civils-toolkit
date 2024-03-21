@@ -148,7 +148,9 @@ html {
   <!-- <a class="pat-bar-item pat-button pat-hover-black nav" href="#kupa">Link</a> -->
   <!-- <img src="obermajer-logo.svg" style="width: 120px; height: auto; display: block; margin: 0 auto;"  class="pat-bar-item nav"></img> -->
   <div style="position: fixed; bottom: 12px; left: 12px; width: 100%;">
-    <img src="obermajer-logo.svg" style="width: 90px; height: auto; display: block; margin-left: 0; margin-right: auto;transition: opacity 0.5s;" onmouseover="this.style.opacity=0.5" onmouseout="this.style.opacity=1"></img>
+    <a href="http://obermajer.co.uk" target="_blank">
+      <img src="obermajer-logo.svg" style="width: 90px; height: auto; display: block; margin-left: 0; margin-right: auto; transition: opacity 0.5s;" onmouseover="this.style.opacity=0.5" onmouseout="this.style.opacity=1" />
+    </a> 
   </div>
 </nav>
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -411,27 +413,25 @@ This feature generates Spot Levels around the FFL. By default, spot levels aroun
       <h1 id="Contact" class="pat-text-teal">Contact</h1>
  <p>Feel free to contact Mr Pat</p>
     </div>
+    
     <div class="pat-third pat-container">
       <!-- <p class="pat-border pat-padding-large pat-padding-32 pat-center">AD</p>
       <p class="pat-border pat-padding-large pat-padding-64 pat-center">AD</p> -->
     </div>
   </div>
-  <form
-    action="https://formspree.io/f/mjvnerzy"
-    method="POST"
-    
-  >
-    <label>
-      Your email:
-      <input type="email" name="email">
-    </label>
-    <label>
-      Your message:
-      <textarea name="message" rows="3"></textarea>
-    </label>
+  <form action="https://formspree.io/f/mjvnerzy" method="POST" class="canvas pat-form">
+    <div class="pat-form-group">
+      <label for="email">Your email:</label>
+      <input type="email" id="email" name="email" class="pat-input">
+    </div>
+    <div class="pat-form-group">
+      <label for="message">Your message:</label>
+      <textarea id="message" name="message" rows="3" class="pat-input"></textarea>
+    </div>
     <!-- your other form fields go here -->
-    <button type="submit" class="btn btn--primary">Send</button>
+    <button type="submit" class="pat-btn pat-button pat-primary">Send</button>
   </form>
+  
   <!-- Pagination -->
 
 
@@ -439,9 +439,14 @@ This feature generates Spot Levels around the FFL. By default, spot levels aroun
     <div class="pat-container pat-theme-l2 pat-padding-32" style="position: relative;">
       <h2>Ober Civils Toolkit</h2>
       <h5>Developed by Pat Obermajer</h5> 
+      <h5><a href="http://obermajer.co.uk" target="_blank">obermajer.co.uk</a></h5>
+      <h5>© <span id="year"></span> Pat Obermajer</h5> 
     </div>
   </footer>
-  
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 <!-- END MAIN -->
 </div>
 

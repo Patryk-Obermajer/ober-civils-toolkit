@@ -233,3 +233,21 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .pat-border-dark-grey,.pat-hover-border-dark-grey:hover,.pat-border-dark-gray,.pat-hover-border-dark-gray:hover{border-color:#616161!important}
 .pat-border-pale-red,.pat-hover-border-pale-red:hover{border-color:#ffe7e7!important}.pat-border-pale-green,.pat-hover-border-pale-green:hover{border-color:#e7ffe7!important}
 .pat-border-pale-yellow,.pat-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.pat-border-pale-blue,.pat-hover-border-pale-blue:hover{border-color:#e7ffff!important}
+
+.pat-form {
+    max-width: 600px;
+    margin: 8px auto;
+    padding: 8px;
+    background: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .pat-form-group {
+    margin-bottom: 15px;
+  }
+  
+  .pat-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
