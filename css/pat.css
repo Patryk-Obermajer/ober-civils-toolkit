@@ -235,15 +235,15 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .pat-border-pale-yellow,.pat-hover-border-pale-yellow:hover{border-color:#ffffcc!important}.pat-border-pale-blue,.pat-hover-border-pale-blue:hover{border-color:#e7ffff!important}
 
 .pat-form {
-    max-width: 600px;
-    margin: 10px;
+    max-width: 900px;
+    margin: 20px;
     padding: 20px;
     background: #f9f9f9;
     border-radius: 8px;
   }
   
   .pat-form-group {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
   }
   
   .pat-form-group label {
@@ -281,7 +281,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 .pat-btn:hover,
 .pat-button:hover {
-  background-color: darken(#13a4ba87, 10%); /* Darkens the button when hovering */
+  background-color: darken(#13a4ba87, 80%); /* Darkens the button when hovering */
 }
 
 /* Add responsiveness to the form */
