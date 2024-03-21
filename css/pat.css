@@ -236,8 +236,8 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 .pat-form {
     max-width: 600px;
-    margin: 8px auto;
-    padding: 8px;
+    margin: 10px;
+    padding: 20px;
     background: #f9f9f9;
     border-radius: 8px;
   }
@@ -251,3 +251,42 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
     margin-bottom: 5px;
     font-weight: bold;
   }
+
+  
+.pat-input,
+.pat-btn,
+.pat-button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px; /* Spacing between input fields */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Makes sure the padding doesn't affect the final size */
+}
+
+.pat-input:focus,
+.pat-btn:focus,
+.pat-button:focus {
+  border-color: #13a4ba87;
+  outline: none; /* Removes the default focus outline */
+}
+
+.pat-btn,
+.pat-button {
+  background-color: #13a4ba87; /* Primary button color */
+  color: white;
+  cursor: pointer;
+  border: none; /* Removes the border */
+}
+
+.pat-btn:hover,
+.pat-button:hover {
+  background-color: darken(#13a4ba87, 10%); /* Darkens the button when hovering */
+}
+
+/* Add responsiveness to the form */
+@media (max-width: 768px) {
+  .pat-form {
+    padding: 15px;
+  }
+}
